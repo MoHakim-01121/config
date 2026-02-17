@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = get_env_variable('SECRET_KEY', '+-r)458@xdz90a!%zxscvw6@1cdv91yf4dh5rtn4wxw^x4xu&5')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = get_bool_env('DEBUG', True)  # Default True for development
+DEBUG = get_bool_env('DEBUG', False)  # Default False for production
 
 # Restrict hosts in production
 ALLOWED_HOSTS = get_list_env('ALLOWED_HOSTS', ['*'])  # Allow all in development
@@ -80,12 +80,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database configuration
 # Using SQLite (simple, no external database needed)
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+DATABASES = {}
 
 
 # Password validation
@@ -122,8 +117,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Additional locations of static files
 STATICFILES_DIRS = []
