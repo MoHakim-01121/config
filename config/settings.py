@@ -228,3 +228,8 @@ LOGGING = {
         },
     },
 }
+
+# Add environment variable configurations
+ADMIN_URL = get_env_variable('ADMIN_URL', 'admin/')
+MEDIA_ROOT = get_env_variable('MEDIA_ROOT', '/path/to/media')
+PORT = get_env_variable('PORT', '8000')
