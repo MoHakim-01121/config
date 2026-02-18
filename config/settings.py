@@ -138,7 +138,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # Only enable HTTPS redirects in production
 if not DEBUG:
     # HTTPS/SSL Settings
-    SECURE_SSL_REDIRECT = True
+    SECURE_SSL_REDIRECT = False  # Temporarily disabled to debug redirect loop
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
     
