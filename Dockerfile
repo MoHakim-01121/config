@@ -21,9 +21,9 @@ COPY . /app
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-EXPOSE 10000
+EXPOSE $PORT
 
-CMD ["gunicorn", "config.wsgi", "--bind", "0.0.0.0:10000", "--log-file", "-"]
+CMD ["gunicorn", "config.wsgi", "--bind", "0.0.0.0:$PORT", "--log-file", "-"]
 # Updated Thu Dec  4 03:14:22 PM WIB 2025
 # Build 1764836170
 # Rebuild 1764836843
