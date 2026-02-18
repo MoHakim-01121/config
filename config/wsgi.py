@@ -9,8 +9,12 @@ https://docs.djangoproject.com/en/5.2/howto/deployment/wsgi/
 
 import os
 
-# Log the PORT environment variable to debug the issue
-print(f"PORT: {os.getenv('PORT')}")
+# Debugging PORT environment variable
+port = os.getenv('PORT')
+if not port:
+    print("Error: PORT environment variable is not set or is empty.")
+else:
+    print(f"PORT environment variable: {port}")
 
 from django.core.wsgi import get_wsgi_application
 
