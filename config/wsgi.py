@@ -9,10 +9,10 @@ https://docs.djangoproject.com/en/5.2/howto/deployment/wsgi/
 
 import os
 
-# Debugging PORT environment variable
-port = os.getenv('PORT')
-if not port:
-    print("Error: PORT environment variable is not set or is empty.")
+# Debugging PORT environment variable with fallback
+port = os.getenv('PORT', '8000')  # Default to 8000 if PORT is not set
+if not port.isdigit():
+    print(f"Error: PORT environment variable is not a valid number: {port}")
 else:
     print(f"PORT environment variable: {port}")
 
