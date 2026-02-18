@@ -9,6 +9,11 @@ https://docs.djangoproject.com/en/5.2/howto/deployment/wsgi/
 
 import os
 
+# Debugging all environment variables
+print("All environment variables:")
+for key, value in os.environ.items():
+    print(f"{key}: {value}")
+
 # Debugging PORT environment variable with fallback
 port = os.getenv('PORT', '8000')  # Default to 8000 if PORT is not set
 if not port.isdigit():
