@@ -188,12 +188,6 @@ LOGGING = {
         },
     },
     'handlers': {
-        'file': {
-            'level': 'WARNING',
-            'class': 'logging.FileHandler',
-            'filename': BASE_DIR / 'logs' / 'django.log',
-            'formatter': 'verbose',
-        },
         'console': {
             'level': 'INFO',
             'class': 'logging.StreamHandler',
@@ -207,22 +201,12 @@ LOGGING = {
     },
     'loggers': {
         'django': {
-            'handlers': ['file', 'console'],
+            'handlers': ['console'],
             'level': 'INFO',
             'propagate': True,
         },
         'django.server': {
-            'handlers': [],  # Disable HTTPS error logging in development
-            'level': 'ERROR',
-            'propagate': False,
-        },
-        'django.request': {
-            'handlers': ['mail_admins', 'file'],
-            'level': 'ERROR',
-            'propagate': False,
-        },
-        'invoices': {
-            'handlers': ['file', 'console'],
+            'handlers': ['console'],
             'level': 'INFO',
             'propagate': False,
         },
