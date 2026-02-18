@@ -1,5 +1,5 @@
 """
-WSGI config for config project.
+WSGI project for config project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -8,6 +8,9 @@ https://docs.djangoproject.com/en/5.2/howto/deployment/wsgi/
 """
 
 import os
+
+# Log the PORT environment variable to debug the issue
+print(f"PORT: {os.getenv('PORT')}")
 
 from django.core.wsgi import get_wsgi_application
 
